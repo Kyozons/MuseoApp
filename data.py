@@ -14,7 +14,10 @@ def create_excel(shopify_filename, shipit_filename):
     # es específica para los archivos que necesita trabajar
 
     # leer archivo csv que tiene un delimitador especifico
-    shopify = pd.read_csv(shopify_filename, sep=";")
+    try:
+        shopify = pd.read_csv(shopify_filename, sep=",")
+    except:
+        shopify = pd.read_csv(shopify_filename, sep=";")
 
     # Leer excel y extraer la info de la hoja "Envíos" para ser transformada a csv
     shipit = pd.read_excel(shipit_filename, sheet_name="Envíos")
