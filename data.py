@@ -76,4 +76,4 @@ def create_excel(shopify_filename, shipit_filename):
     # Guardar DataFrame como Excel
     if not os.path.exists('Informes'):
         os.mkdir('Informes')
-    informe_ventas.to_excel("./Informes/informe_ventas.xlsx")
+    informe_ventas.to_excel("./Informes/informe_ventas.xlsx", index=False)
