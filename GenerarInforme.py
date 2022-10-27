@@ -4,7 +4,7 @@ import customtkinter as tk
 from tkinter import filedialog
 from tkinter import messagebox
 from pathlib import Path
-import data
+import data, os
 
 tk.set_appearance_mode("dark")
 
@@ -63,7 +63,7 @@ class App(tk.CTk):
     def export_files(self):
         if self.shopify_filename and self.shipit_filename:
             data.create_excel(self.shopify_filename, self.shipit_filename)
-            messagebox.showinfo('Operación exitosa', f'Archivo guardado en {Path.cwd()}/informe_ventas.xlsx ')
+            messagebox.showinfo('Operación exitosa', f'Archivo guardado en {os.path.abspath("Informes/informe_ventas.xlsx")}')
         else:
             messagebox.showerror('No se encuentra archivo', 'Favor cargar archivos para continuar')
 
