@@ -8,12 +8,12 @@ import data, os
 
 tk.set_appearance_mode("dark")
 
-class App(tk.CTk):
+class App(tk.CTkFrame):
     def __init__(self):
         super().__init__()
-        self.title("Generar Excel informe ventas")
-        self.geometry("700x300")
-        self.minsize(500, 300)
+        # self.title("Generar Excel informe ventas")
+        # self.geometry("700x300")
+        # self.minsize(500, 300)
         self.create_widgets()
         self.shopify_filename = ""
         self.shipit_filename = ""
